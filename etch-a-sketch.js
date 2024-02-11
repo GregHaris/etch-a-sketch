@@ -20,7 +20,6 @@ function createGrid(size) {
         for (let j = 1; j <= size; j++) {
             const row = document.createElement("div");
             row.classList.add("row");
-            row.style.border = "2px solid black";
             column.appendChild(row);
         }
 
