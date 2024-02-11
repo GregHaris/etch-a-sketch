@@ -1,6 +1,16 @@
 const container_div = document.querySelector("#container");
 const resetBtn = document.querySelector("#resetBtn");
 
+// Generate a random value btw 0 and 255
+function getRandomRGBValue() {
+    return Math.floor(Math.random() * 256 );
+}
+
+function darkenColor(color, factor) {
+    // Darken the color by applying a factor (0 to 1)
+    return Math.floor(color * (1 - factor));
+}
+
 function createGrid(rows, cols) {
     container_div.textContent = ""
     for (let i = 0; i < rows * cols; i++) {
