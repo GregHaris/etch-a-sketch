@@ -1,4 +1,4 @@
-const screen = document.querySelector("#container");
+const screen = document.querySelector("#sketchPad");
 const resetBtn = document.querySelector("#resetBtn");
 
 function getRandomRGBValue() {
@@ -22,7 +22,6 @@ function createGrid(size) {
             row.classList.add("row");
             column.appendChild(row);
         }
-
         screen.appendChild(column);
     }
 }
