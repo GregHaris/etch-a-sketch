@@ -10,9 +10,7 @@
     box-sizing: border-box;
     margin-bottom: 3px;
     cursor: pointer;
-    transition: 0.3s;
-    background-color: #f0f0f0;
-    border: 1px solid;
+    transition: 1s;
 }
 
 
