@@ -11,10 +11,11 @@
     padding-bottom: calc(6.25% - 10px);
     background-color: #f0f0f0;
     border: 1px solid #ccc;
+    transition: background-color 0.3s;
 }
 
 .square_grid:hover{
-    background-color: antiquewhite;
+    background-color: rgb(238, 213, 179);
 }
 
 #resetBtn{
