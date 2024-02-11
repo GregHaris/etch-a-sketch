@@ -10,9 +10,9 @@ function darkenColor(color, factor) {
     return Math.floor(color * (1 - factor));
 }
 
-function createGrid(rows, cols) {
+function createGrid(size) {
     container_div.textContent = "";
-    for (let i = 0; i < rows * cols; i++) {
+    for (let i = 0; i < size * size; i++) {
         const square = document.createElement("div");
         square.classList.add("square_grid");
         container_div.appendChild(square);
@@ -22,7 +22,7 @@ function createGrid(rows, cols) {
 function promptForGridSize() {
     const gridSize = parseInt(prompt("Enter the number of squares per side (maximum 100):"), 10);
     if (!isNaN(gridSize) && gridSize > 0 && gridSize <= 100) {
-        createGrid(gridSize, gridSize);
+        createGrid(gridSize);
         addSquareListeners(); // Add event listeners after creating the grid
     } else {
         alert("Please enter a valid number between 1 and 100.");
@@ -32,11 +32,11 @@ function promptForGridSize() {
 function addSquareListeners() {
     const squares = document.querySelectorAll(".square_grid");
     squares.forEach((square) => {
-        square.addEventListener("mouseover", handleSquareMouseOver);
+        square.addEventListener("mouseover", changeColor);
     });
 }
 
-function handleSquareMouseOver(event) {
+function changeColor(event) {
     const square = event.target;
     const r = getRandomRGBValue();
     const g = getRandomRGBValue();
@@ -57,6 +57,6 @@ function handleSquareMouseOver(event) {
 }
 
 resetBtn.addEventListener("click", promptForGridSize);
-
+container_div.addEventListener("mouseover", addSquareListeners);
 // Initial grid (you can adjust the default size if needed)
-createGrid(16, 16);
+createGrid(16);
