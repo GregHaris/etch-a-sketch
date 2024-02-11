@@ -1,4 +1,4 @@
-const container_div = document.querySelector("#container");
+const screen = document.querySelector("#container");
 const resetBtn = document.querySelector("#resetBtn");
 
 function getRandomRGBValue() {
@@ -11,11 +11,20 @@ function darkenColor(color, factor) {
 }
 
 function createGrid(size) {
-    container_div.textContent = "";
-    for (let i = 0; i < size * size; i++) {
-        const square = document.createElement("div");
-        square.classList.add("square_grid");
-        container_div.appendChild(square);
+    screen.textContent = "";
+
+    for (let i = 0; i < size; i++) {
+        const column = document.createElement("div");
+        column.classList.add("column");
+
+        for (let j = 1; j <= size; j++) {
+            const row = document.createElement("div");
+            row.classList.add("row");
+            row.style.border = "2px solid black";
+            column.appendChild(row);
+        }
+
+        screen.appendChild(column);
     }
 }
 
@@ -30,18 +39,18 @@ function promptForGridSize() {
 }
 
 function addSquareListeners() {
-    const squares = document.querySelectorAll(".square_grid");
-    squares.forEach((square) => {
-        square.addEventListener("mouseover", changeColor);
+    const rows = document.querySelectorAll(".row");
+    rows.forEach((row) => {
+        row.addEventListener("mouseover", changeColor);
     });
 }
 
 function changeColor(event) {
-    const square = event.target;
+    const row = event.target;
     const r = getRandomRGBValue();
     const g = getRandomRGBValue();
     const b = getRandomRGBValue();
-    const currentColor = window.getComputedStyle(square).backgroundColor;
+    const currentColor = window.getComputedStyle(row).backgroundColor;
     const factor = 0.1; // Darkening factor (10% per interaction)
 
     // Parse the current color to extract RGB values
@@ -53,10 +62,10 @@ function changeColor(event) {
     const newB = darkenColor(b, factor);
 
     // Apply the new color
-    square.style.backgroundColor = `rgb(${newR}, ${newG}, ${newB})`;
+    row.style.backgroundColor = `rgb(${newR}, ${newG}, ${newB})`;
 }
 
 resetBtn.addEventListener("click", promptForGridSize);
-container_div.addEventListener("mouseover", addSquareListeners);
+screen.addEventListener("mouseover", addSquareListeners);
 // Initial grid (you can adjust the default size if needed)
 createGrid(16);
