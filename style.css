@@ -1,19 +1,50 @@
+body{
+    margin: 10px;
+    padding: 20px;
+    background-color: rgb(244, 234, 181);
+    box-sizing: border-box;
+}
+
+#container{
+display: flex;
+gap: 10px;
+margin-left:25%;
+margin-right: 25% ;
+overflow: hidden;
+}
+
+#heading{
+    text-align: center;
+}
+#button_container{
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#sketchPad{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 600px;
+    box-shadow: 10px 10px 10px red;
+}
+
 .column {
     display: flex;
     gap: 5px;
 }
 
 .row {
-    flex: 1;
-    text-align: center;
+    height: 6.25%;
+    width: 6.25%;
     padding: 10px;
-    box-sizing: border-box;
     margin-bottom: 3px;
     cursor: pointer;
     transition: 1s;
 }
-
-
 
 .row:hover{
     background-color: rgb(238, 213, 179);
