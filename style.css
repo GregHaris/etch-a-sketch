@@ -1,63 +1,81 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: antiquewhite;
+  background-color: antiquewhite;
 }
 
-#heading{
-    margin: 10px;
-    padding: 5px;
-    text-align: center;
+#heading {
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
 }
 
-#container{
-    margin: 10px ;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    height: 80vh;
+#container {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+  width: 100vw;
 }
 
-#sketchPadContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-    width: 100%;
-    align-content: center;
-    background-color: 	#e9d9c0;
-    border-radius: 10px;
+#sketchPadContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 80%;
+  align-content: center;
+  background-color: #e9d9c0;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 1;
 }
 
 #sketchPad {
-    background-color: #fff;
-    height: 90%;
-    width: auto;
-    cursor: url('img/paint-Brush.cur'), auto;
-  }
-  
-  #sketchPad:active {
-    cursor: url('img/paint-Brush.cur'), auto;
-  }
-
-.resetBtn{
-padding: 10px;
-width: 100px;
-border: none;
-border-radius: 5px;
-background-color: #4285F4;
-color: #fff;
-font-size: 14px;
-font-weight: 700;
-cursor: pointer;
+  background-color: #fff;
+  height: fit-content;
+  width: fit-content;
+  cursor: url("img/paint-Brush.cur"), auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
-.resetBtn:hover{
-    background-color: #699ff6;
+#sketchPad:active {
+  cursor: url("img/paint-Brush.cur"), auto;
+}
+
+.column {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.resetBtn {
+  padding: 10px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4285f4;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  background-color: #699ff6;
 }
