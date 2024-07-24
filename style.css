@@ -25,21 +25,10 @@ body {
   width: 100vw;
 }
 
-#sketchPadContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80%;
-  width: 80%;
-  align-content: center;
-  background-color: #e9d9c0;
-  border-radius: 10px;
-  overflow: hidden;
-  aspect-ratio: 1;
-}
-
 #sketchPad {
   background-color: #fff;
+  max-height: 80%;
+  max-width: 80%;
   height: fit-content;
   width: fit-content;
   cursor: url("img/paint-Brush.cur"), auto;
@@ -47,6 +36,8 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   overflow: hidden;
+  border: 15px solid #DDCFBB;
+  border-radius: 10px;
 }
 
 #sketchPad:active {
